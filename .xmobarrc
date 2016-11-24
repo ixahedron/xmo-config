@@ -1,0 +1,32 @@
+Config { 
+          font        = "-*-Fixed-Bold-R-Normal-*-14-*-*-*-*-*-*-*"
+        , borderColor = "black"
+        , border      = BottomB
+        , bgColor     = "black"
+        , fgColor     = "grey"
+        , position    = TopW L 200
+
+
+        , commands    = [ Run Weather "EDDM" ["-t","<tempC>°C","-L","10","-H","27","--normal","green","--high","red","--low","lightblue"] 36000
+                        , Run Network "wlp3s0" ["-L","0","-H","32","--normal","red","--high","green"] 10
+                        , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                        , Run Memory ["-t","Mem: <usedratio>%"] 10
+                        , Run Swap [] 10
+                        , Run Battery ["-t","Batt: <acstatus>","-L","25","-H","65","-h","green","-n","yellow","-l","red","--", "-O", "Charging: <left>", "-o" , "<left>% (<timeleft>)"] 300
+                        , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                        , Run Brightness [ "-t", "Bright: <percent>%", "--", "-D", "intel_backlight"] 10
+                        ]
+        
+        , lowerOnStart     = True
+        , hideOnStart      = False
+        , persistent       = True
+        , overrideRedirect = True
+        , allDesktops      = True
+
+
+        , sepChar  = "%"
+        , alignSep = "}{"
+
+
+        , template = " %cpu% | %memory% * %swap% | %wlp3s0%}{<fc=#ee9a00>%date%</fc> | %battery% | %bright% | %EDDM% "
+        }
