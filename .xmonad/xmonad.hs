@@ -1,5 +1,4 @@
 import XMonad
-import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
@@ -11,7 +10,7 @@ modKey = mod4Mask
 myTerminal = "urxvt"
 xmobar = "xmobar"
 
-myWorkspaces = ["1:term","2:web","3:code","4:media","5:ssh", "6", "7:graphics", "8", "9:music"]
+myWorkspaces = ["1:term","2:code","3:web","4:media","5", "6", "7:graphics", "8:ssh", "9:music"]
 
 bordWidth = 1
 normColour = "#cccccc"
@@ -37,8 +36,8 @@ magnifyLayout = magnifier (Tall 1 (3/100) (1/2))
 -------------------------
 
 main = do
-  xmproc <- spawnPipe "xmobar"
-  xmonad $ def
+  xmproc <- spawnPipe xmobar
+  xmonad $ docks def
       { manageHook         = manageDocks <+> manageHook def
       , layoutHook         = avoidStruts $ layoutHook def --{layoutHook = magnifyLayout}
       , terminal           = myTerminal
