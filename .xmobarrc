@@ -12,7 +12,7 @@ Config {
                         , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
                         , Run Swap [] 10
-                        , Run Battery ["-t","Batt: <acstatus>","-L","35","-H","70","-h","green","-n","yellow","-l","red","--", "-O", "Charging: <left>", "-o" , "<left>% (<timeleft>)"] 300
+                        , Run Battery ["-t","Batt: <acstatus>","-L","35","-H","70","-h","green","-n","yellow","-l","red","--", "-O", "Charging: <left>%", "-o" , "<left>% (<timeleft>)"] 300
                         , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                         , Run Brightness [ "-t", "Bright: <percent>%", "--", "-D", "intel_backlight"] 10
                         ]

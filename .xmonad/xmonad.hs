@@ -17,13 +17,13 @@ normColour = "#cccccc"
 bordColour = "#cd8b00"
 
 addKeyBindings = [ ((mod4Mask .|. shiftMask, xK_z), spawn "slimlock")
-                 , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
-                 , ((0, xK_Print), spawn "scrot")
+                 , ((controlMask, xK_Print), spawn "scrot")
+                 , ((0, xK_Print), spawn "sleep 0.2; scrot -s")
                  , ((0, 0x1008ff19), spawn "xbacklight -dec 10")
                  , ((0, 0x1008ff2e), spawn "xbacklight -inc 10")
-                 , ((0, 0x1008ff11), spawn "amixer set Master 5%-")
-                 , ((0, 0x1008ff12), spawn "amixer set Master toggle")
-                 , ((0, 0x1008ff13), spawn "amixer set Master 5%+ unmute")
+                 , ((0, 0x1008ff11), spawn "pactl set-sink-volume 0 -5%")
+                 , ((0, 0x1008ff12), spawn "pactl list sinks | grep -q Mute:.no && pactl set-sink-mute 0 1 || pactl set-sink-mute 0 0")
+                 , ((0, 0x1008ff13), spawn "pactl set-sink-mute 0 0 | pactl set-sink-volume 0 +5%")
 --                 , ((mod4Mask .|. controlMask              , xK_plus ), sendMessage MagnifyMore)
 --                 , ((mod4Mask .|. controlMask              , xK_minus), sendMessage MagnifyLess)
 --                 , ((mod4Mask .|. controlMask              , xK_o    ), sendMessage ToggleOff  )
