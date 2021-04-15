@@ -10,7 +10,7 @@ modKey = mod4Mask
 myTerminal = "urxvt"
 xmobar = "xmobar"
 
-myWorkspaces = ["1:term","2:code","3:web","4:media","5", "6", "7:graphics", "8:ssh", "9:music"]
+myWorkspaces = ["1:term","2:code","3:web","4:media","5:", "6:music", "7:graphics", "8:", "9:messaging"]
 
 bordWidth = 1
 normColour = "#cccccc"
