@@ -1,9 +1,9 @@
 Config { 
-    font        = "-*-Fixed-Bold-R-Normal-*-14-*-*-*-*-*-*-*"
+    font        = "Fixed Bold 10"
   , borderColor = "black"
   , border      = BottomB
   , bgColor     = "black"
-  , fgColor     = "grey"
+  , fgColor     = "silver"
   , position    = TopW L 200
 
 
@@ -15,7 +15,7 @@ Config {
       , Run Swap [] 10
       , Run Battery ["-t","Batt: <acstatus>","-L","35","-H","70","-h","green","-n","yellow","-l","red","--", "-O", "Charging: <left>%", "-o" , "<left>% (<timeleft>)"] 300
       , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
-      , Run Brightness [ "-t", "Bright: <percent>%", "--", "-D", "intel_backlight"] 10
+      , Run Brightness [ "-t", "Bright: <percent>%", "--", "-D", "amdgpu_bl1"] 10
       ]
   
   , lowerOnStart     = True
@@ -29,6 +29,6 @@ Config {
   , alignSep = "}{"
 
 
-  --, template = " %cpu% | %memory% * %swap% | %wlp3s0%}{<fc=#ee9a00>%date%</fc> | %battery% | %bright% | %EDDM% "
-  , template = " %cpu% | %memory% * %swap% | %wlp3s0%}{<fc=#ee9a00>%date%</fc> | %battery% | %bright% | %EVRA% "
+  , template = " %cpu% | %memory% * %swap% | %wlp3s0%}{<fc=#ee9a00>%date%</fc> | %battery% | %bright% | %EDDM% "
+  --, template = " %cpu% | %memory% * %swap% | %wlp3s0%}{<fc=#ee9a00>%date%</fc> | %battery% | %bright% | %EVRA% "
         }
