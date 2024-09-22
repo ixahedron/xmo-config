@@ -9,7 +9,7 @@ Config {
 
   , commands    =
       [ Run Weather "EDDM" ["-t","<tempC>°C","-L","12","-H","26","--normal","green","--high","red","--low","lightblue"] 36000
-      , Run Network "wlp3s0" ["-L","0","-H","128","--normal","red","--high","green"] 10
+      , Run Network "wlp1s0" ["-L","0","-H","128","--normal","red","--high","green"] 10
       , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
       , Run Memory ["-t","Mem: <usedratio>%"] 10
       , Run Swap [] 10
@@ -29,6 +29,6 @@ Config {
   , alignSep = "}{"
 
 
-  , template = " %cpu% | %memory% * %swap% | %wlp3s0%}{<fc=#ee9a00>%date%</fc> | %battery% | %bright% | %EDDM% "
-  --, template = " %cpu% | %memory% * %swap% | %wlp3s0%}{<fc=#ee9a00>%date%</fc> | %battery% | %bright% | %EVRA% "
+  , template = " %cpu% | %memory% * %swap% | %wlp1s0%}{<fc=#ee9a00>%date%</fc> | %battery% | %bright% | %EDDM% "
+  --, template = " %cpu% | %memory% * %swap% | %wlp1s0%}{<fc=#ee9a00>%date%</fc> | %battery% | %bright% | %EVRA% "
         }
